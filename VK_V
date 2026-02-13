@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Happy Valentinstag Vanessa 🌹</title>
+<style>
+  body {
+    margin: 0;
+    background: linear-gradient(#ffe6f2, #ffd6e8);
+    font-family: "Segoe UI", -apple-system, system-ui, sans-serif;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #c2185b;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px white;
+    position: relative;
+    z-index: 10;
+  }
+
+  #rose-field {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .rose {
+    position: absolute;
+    font-size: 3rem;
+    animation: float 6s infinite ease-in-out;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-40px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(-5deg); }
+  }
+</style>
+</head>
+<body>
+
+<h1>🌹 Happy Valentinstag Vanessa 🌹</h1>
+<div id="rose-field"></div>
+
+<script>
+  const COUNT = 40;
+  const field = document.getElementById('rose-field');
+  for (let i = 0; i < COUNT; i++) {
+    const r = document.createElement('div');
+    r.className = 'rose';
+    r.textContent = '🌹';
+    r.style.left = Math.random() * 100 + 'vw';
+    r.style.top = Math.random() * 100 + 'vh';
+    r.style.animationDuration = (4 + Math.random() * 4) + 's';
+    r.style.fontSize = (2 + Math.random() * 3) + 'rem';
+    field.appendChild(r);
+  }
+</script>
+
+</body>
+</html>
